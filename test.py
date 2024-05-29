@@ -109,14 +109,22 @@ st.markdown(f"""
 </style>
 """, unsafe_allow_html=True)
 
+if 'running' not in st.session_state:
+    st.session_state.running = False
+
 if menu_option == "Home":
     st.subheader("Real-Time Drowning Detection and Safety")
     # Main loop for real-time detection
     frame_placeholder = st.empty()
 
-    stop = st.button("Stop", key="stop_button_home")
+    if st.session_state.running:
+        if st.button("Stop", key="stop_button_home"):
+            st.session_state.running = False
+    else:
+        if st.button("Start", key="start_button_home"):
+            st.session_state.running = True
 
-    while not stop:
+    while st.session_state.running:
         frame = capture_letsview_cast_window()
 
         if frame is not None:
@@ -125,7 +133,7 @@ if menu_option == "Home":
             # Display the frame
             frame_placeholder.image(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), channels="RGB")
 
-        stop = st.button("Stop", key="stop_button_home")
+        time.sleep(0.1)  # Add a small delay to avoid excessive CPU usage
 
 elif menu_option == "Upload":
     st.subheader("Upload a Video for Prediction")
