@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['car', 'not-drowning', 'stock-in-car', 'stock-in-water']
+
+roboflow:
+  workspace: drowning-f81k9
+  project: dv3
+  version: 2
+  license: Private
+  url: https://app.roboflow.com/drowning-f81k9/dv3/2
