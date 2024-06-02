@@ -15,7 +15,7 @@ import pandas as pd
 st.set_page_config(page_title="Welcome to MUNQIDH! - مرحباً بك في منقذ!", page_icon="🌊")
 
 # Load YOLOv8 model
-model_path = r'C:\Users\N J\mir\best.pt'
+model_path = r'C:\Users\N J\mir\bestV5.pt'
 model = YOLO(model_path)
 
 # Define function to capture LetsView [Cast] window
