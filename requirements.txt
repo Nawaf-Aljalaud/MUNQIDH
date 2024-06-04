@@ -1,1 +1,8 @@
-streamlit\nopencv-python\nnumpy\npyautogui\npygetwindow\nultralytics\nrequests\npandas
+numpy
+opencv-python
+pyautogui
+pygetwindow
+ultralytics
+streamlit
+requests
+pandas
