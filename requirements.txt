@@ -65,6 +65,7 @@ networkx==3.3
 numpy==1.26.4
 opencv-contrib-python==4.9.0.80
 opencv-python==4.9.0.80
+opencv-python-headless==4.10.0.82
 packaging==24.0
 pandas==2.2.2
 pandocfilters==1.5.1
